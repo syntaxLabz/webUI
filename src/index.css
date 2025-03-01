@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply antialiased bg-neutral-950 text-neutral-100;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  .section-title {
+    @apply text-4xl font-bold mb-6 text-white;
+  }
+  
+  .section-subtitle {
+    @apply text-lg text-neutral-300 max-w-3xl mx-auto;
+  }
+  
+  .card {
+    @apply bg-neutral-900/60 border border-neutral-800 rounded-xl p-8 transition-all duration-300 backdrop-blur-sm;
+  }
+  
+  .card-hover {
+    @apply hover:border-neutral-700 hover:bg-neutral-900/80 hover:shadow-soft;
+  }
+  
+  .btn {
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-300 inline-flex items-center justify-center;
+  }
+  
+  .btn-primary {
+    @apply bg-brand-600 text-white hover:bg-brand-700 focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 focus:ring-offset-neutral-900;
+  }
+  
+  .btn-secondary {
+    @apply bg-neutral-800 text-white hover:bg-neutral-700 border border-neutral-700;
+  }
+  
+  .btn-outline {
+    @apply border border-neutral-700 text-white hover:bg-neutral-800;
+  }
+  
+  .nav-link {
+    @apply text-neutral-300 hover:text-white transition-colors;
+  }
+  
+  .badge {
+    @apply px-2.5 py-1 rounded-full text-xs font-medium;
+  }
+  
+  .badge-brand {
+    @apply bg-brand-900/30 text-brand-400 border border-brand-800/50;
+  }
+  
+  .badge-accent {
+    @apply bg-accent-900/30 text-accent-400 border border-accent-800/50;
+  }
+  
+  .grid-pattern {
+    background-size: 30px 30px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  }
+  
+  .noise-overlay {
+    @apply absolute inset-0 opacity-[0.015] pointer-events-none bg-noise mix-blend-soft-light;
+  }
+}
+
+/* Add preloading styles for smoother transitions */
+.preload-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 5000px;
+}
+
+/* Improve scrolling performance */
+@supports (scrollbar-gutter: stable) {
+  html {
+    scrollbar-gutter: stable;
+  }
+}
+
+/* Optimize animations */
+@media (prefers-reduced-motion: no-preference) {
+  .animate-on-scroll {
+    transition-property: opacity, transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 500ms;
+  }
+}
