@@ -34,6 +34,7 @@ import {
 
 import { FaReact, FaNodeJs, FaPython, FaJava, FaDocker, FaAws } from 'react-icons/fa';
 import { SiTypescript, SiJavascript, SiGraphql, SiMongodb } from 'react-icons/si';
+import Errors from './errors/Errors.tsx'
 
 function App() {
   const containerVariants = {
@@ -376,6 +377,7 @@ function App() {
           </motion.div>
         </div>
       </section>
+
 
       {/* Featured Tools Section */}
       <section className="py-32 relative preload-section" id="tools">
@@ -869,6 +871,7 @@ function App() {
           </div>
         </div>
       </footer>
+         <Errors/>
     </div>
   );
 }
